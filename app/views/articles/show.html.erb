@@ -1,0 +1,21 @@
+<h2 style="color:blue; text-align:center;">Article no: <%= @article.id %> </h2>
+
+<div style="text-align:center;">
+    <h3> <%= @article.title %> </h3>
+    <p> <%= @article.body %> </p>
+</div>
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= link_to "Destroy", article_path(@article),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %></li>
+</ul>
+
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
